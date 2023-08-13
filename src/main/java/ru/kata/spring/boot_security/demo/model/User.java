@@ -41,7 +41,8 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "roleId"))
     private Set<Role> roles;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String name, String lastname, Byte age, String username, String password, Set<Role> roles) {
         this.name = name;
@@ -52,9 +53,13 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
-    public void setUsername(String username) {this.username = username;}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    public void setPassword(String password) {this.password = password;}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public Long getUserId() {
         return userId;
@@ -97,13 +102,19 @@ public class User implements UserDetails {
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {return getRoles();}
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return getRoles();
+    }
 
     @Override
-    public String getPassword() {return password;}
+    public String getPassword() {
+        return password;
+    }
 
     @Override
-    public String getUsername() {return username;}
+    public String getUsername() {
+        return username;
+    }
 
     @Override
     public boolean isAccountNonExpired() {

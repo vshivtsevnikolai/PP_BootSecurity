@@ -21,7 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     public WebSecurityConfig(SuccessUserHandler successUserHandler, @Qualifier("userDetailsServiceImpl") UserDetailsServiceImpl userDetailsService) {
         this.successUserHandler = successUserHandler;
-        this.userDetailsService=userDetailsService;
+        this.userDetailsService = userDetailsService;
     }
 
     @Autowired
@@ -54,6 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-    public PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder(12);
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(12);
     }
 }

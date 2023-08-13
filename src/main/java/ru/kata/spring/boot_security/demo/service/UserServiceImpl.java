@@ -34,19 +34,29 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAll() {return userDao.findAll();}
+    public List<User> findAll() {
+        return userDao.findAll();
+    }
 
     @Override
-    public User getById(Long id) {return userDao.getById(id);}
+    public User getById(Long id) {
+        return userDao.getById(id);
+    }
 
     @Override
-    public void save(User user) {userDao.save(passwordCoder(user));}
+    public void save(User user) {
+        userDao.save(passwordCoder(user));
+    }
 
     @Override
-    public void deleteById(Long id) {userDao.deleteById(id);}
+    public void deleteById(Long id) {
+        userDao.deleteById(id);
+    }
 
     @Override
-    public User findByUsername(String username) {return userDao.findByUsername(username);}
+    public User findByUsername(String username) {
+        return userDao.findByUsername(username);
+    }
 
     @Override
     @PostConstruct

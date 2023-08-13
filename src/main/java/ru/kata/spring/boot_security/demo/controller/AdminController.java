@@ -34,7 +34,7 @@ public class AdminController {
 
     @GetMapping("admin/new")
     public String pageCreateUser(User user, Model model) {
-        model.addAttribute("listRoles",roleService.findAllRole());
+        model.addAttribute("listRoles", roleService.findAllRole());
         return "create";
     }
 
@@ -63,13 +63,13 @@ public class AdminController {
 
     @GetMapping("admin/edit/{id}")
     public String pageEditUser(@PathVariable("id") long id, Model model) {
-        model.addAttribute("user",userService.getById(id));
-        model.addAttribute("listRoles",roleService.findAllRole());
+        model.addAttribute("user", userService.getById(id));
+        model.addAttribute("listRoles", roleService.findAllRole());
         return "edit";
     }
 
     @PutMapping("admin/edit")
-    public String pageEdit(@RequestParam("role")ArrayList<Long> roles,
+    public String pageEdit(@RequestParam("role") ArrayList<Long> roles,
                            @Valid User user,
                            BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

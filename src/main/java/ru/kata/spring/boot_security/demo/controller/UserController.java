@@ -14,15 +14,17 @@ public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {this.userService = userService;}
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/user")
-    public String pageForUser (Model model, Principal principal) {
-        model.addAttribute("user",userService.findByUsername(principal.getName()));
+    public String pageForUser(Model model, Principal principal) {
+        model.addAttribute("user", userService.findByUsername(principal.getName()));
         return "user";
     }
 
-    @RequestMapping(value={"/login"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String loginPage() {
         return "login";
     }

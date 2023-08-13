@@ -16,7 +16,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     UserDao userDao;
 
     @Autowired
-    public UserDetailsServiceImpl(UserDao userDao) {this.userDao = userDao;}
+    public UserDetailsServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     @Transactional(readOnly = true)

@@ -20,7 +20,9 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<Role> findAllRole() {return roleDao.findAll();}
+    public List<Role> findAllRole() {
+        return roleDao.findAll();
+    }
 
     @Override
     public Set<Role> findByIdRoles(List<Long> roles) {
