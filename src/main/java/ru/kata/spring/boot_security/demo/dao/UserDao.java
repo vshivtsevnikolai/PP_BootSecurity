@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.kata.spring.boot_security.demo.model.User;
 
 @Repository
-@Transactional
 public interface UserDao extends JpaRepository<User, Long> {
     @Query("SELECT u from User u join fetch u.roles where u.username = :username")
     User findByUsername(@Param("username") String username);
